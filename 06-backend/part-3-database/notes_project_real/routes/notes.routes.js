@@ -19,7 +19,7 @@ import {
   createNote,
   updateNote,
   deleteNote,
-} from "../controllers/notes.controller.js";
+} from "../controllers/notes.controllers.js";
 
 const router = express.Router(); // a mini-app just for /notes
 

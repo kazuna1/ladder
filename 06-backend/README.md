@@ -14,9 +14,13 @@ Each part is a self-contained folder — open one and focus only on it.
 │   ├─ express-cheatsheet.md          (syntax reference)
 │   ├─ drills/                        (8 guided drills, 01–08)
 │   └─ project-01-notes-api/          (the single-file Notes API you built)
-└─ part-2-routes-and-controllers/ ← structuring a real backend
-    ├─ backend-structure-cheatsheet.md
-    └─ notes-api-structured/          (same API split into routes/ + controllers/)
+├─ part-2-routes-and-controllers/ ← structuring a real backend
+│   ├─ backend-structure-cheatsheet.md
+│   └─ notes-api-structured/          (same API split into routes/ + controllers/)
+└─ part-3-database/               ← PostgreSQL: data that survives restarts
+    ├─ what-is-a-database.md
+    ├─ sql-cheatsheet.md
+    └─ drills/                        (8 guided SQL drills, 01–08)
 ```
 
 ## Start with Part 1 → read these FIRST (10 minutes)
