@@ -1,0 +1,108 @@
+/* Minimal, plain styling — just enough to look like the sketch (a mobile-ish
+   card container) and make the modal actually overlay. Not "designed" — that's
+   a later Tailwind pass. Purely functional. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #eee;
+  color: #222;
+}
+
+/* the mobile-like container */
+.app {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  padding: 1rem 1.25rem 5rem;   /* bottom padding leaves room for the button */
+  min-height: 70vh;
+  position: relative;
+}
+
+.app h1 {
+  font-size: 1.4rem;
+  margin: 0.25rem 0 1rem;
+}
+
+/* one note card */
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.note-body {
+  margin: 0.15rem 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: #999;
+}
+
+.error {
+  color: #c00;
+}
+
+/* the bottom add button */
+.add-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* the modal backdrop (covers the whole screen) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the modal box */
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  width: 300px;
+}
+
+.modal h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}

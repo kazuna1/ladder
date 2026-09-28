@@ -1,85 +1,93 @@
-# 🗺️ The Project Roadmap — Modern JS → React → Full-Stack
+# The Ladder — Roadmap 🪜
 
-**The pace:** many small projects, each adding **one** new thing. Slow on purpose.
-**How to use:** top to bottom, run the [HANDBOOK](./HANDBOOK.md) on every project.
-Ask me for the next phase's detailed project list when you finish the current one.
+## The Goal
+Become a **backend expert → system architect / designer**, with **expert-level React**
+on the frontend. A backend-heavy full-stack engineer who can *design systems* AND *ship UIs*.
 
----
-
-## 📍 You are here
-
-**Have (from the DS course + OOP Phase 1):** vanilla JS, arrays + array methods,
-objects, callbacks, arrow functions, `map`/`filter`/`reduce`, spread `...`,
-ternary, and OOP basics (constructors, prototypes, `this`).
-
-**The two small gaps before React:** `destructuring` and `import`/`export`.
-
-**Target:** full-stack apps — frontend + backend + database, maybe AI.
-**Path:** frontend-first (React early), backend after.
+## How I learn (the rules)
+- **Build a real project at every level** — no learning without shipping.
+- **Hand-write to learn fundamentals** → then **use AI to accelerate** once understood.
+- **Backend = deep & serious.** **Frontend = React-expert** (AI writes most of it; I understand all of it).
+- Learn the next tool **just-in-time**, when a project makes me feel the need.
 
 ---
 
-## Why this order (the honest version)
-
-Modern React needs: callbacks, arrow functions, `.map()`, spread, ternary
-(**you have all 5**) + destructuring and modules (**the 2 gaps, tiny**). It does
-**NOT** need constructors, prototypes, `this`, factory functions, or `class` —
-those are legacy-React or not-React at all. So there's no big "advanced JS" wall
-before React. Just DOM (so React isn't magic) + two small syntax pieces.
-
----
-
-## The Phases
-
-### Phase 1 — DOM Essentials  *(6 projects — in progress)*
-**Learn:** make a page react — events, reading input, building/removing elements —
-and **feel the pain** of manually syncing the screen with your data. That pain is
-why React exists.
-→ [phase-01-dom-and-events/README.md](./phase-01-dom-and-events/README.md)
-
-### Phase 2 — Modern JS for React  *(short — the 2 real gaps)*
-**Learn:** the only two JS pieces you're missing for React:
-- **destructuring** — `const [a, b] = arr` and `const { x } = obj` (React uses this
-  constantly — `const [count, setCount] = useState(0)`)
-- **modules** — `export` / `import` to split code across files (React is all modules)
-A quick refresher on `map`/spread/ternary *in a React-shaped context* too.
-*Small — roughly a day. Then you're genuinely ready.*
-
-### Phase 3 — React
-**Learn:** the tool most frontend jobs use. Components, JSX, **state** (`useState`),
-props, event handling, rendering lists with `.map()`, conditional rendering,
-**effects** (`useEffect`), and routing.
-**Starts by rebuilding the Phase-1 Shopping List in React** — so you feel, directly,
-what the framework buys you. Closures finally click here, via `useState`.
-
-### Phase 4 — Async & APIs  *(inside React)*
-**Learn:** getting data from the internet — promises, `async`/`await`, `fetch`,
-JSON, and loading/error/empty states — done the React way (`useEffect` + `fetch`).
-Build weather / search / list apps that pull from real public APIs.
-
-### Phase 5 — Backend: Node → Express → Databases
-**Learn:** the server side. Node runtime + npm (leave the browser), then Express
-(routing, REST, middleware, JSON APIs), then a database (schema/ER design, CRUD,
-relationships). This is where "data model first" gets its teeth.
-
-### Phase 6 — Full-Stack + Auth
-**Learn:** frontend + backend + DB as one app. Wiring React to your own API, CORS,
-and **authentication/authorization** — signup, login, password hashing,
-JWT/sessions, protected routes. Plus deploying it live.
-
-### Phase 7 — Professional & Scale  *(the "last mile")*
-**Learn:** engineer-level tooling — TypeScript, testing, caching (Redis),
-performance, CI/CD, Next.js / Nest.js, architecture patterns, AI integration.
-The "scaling" topics from your hierarchy live HERE — solutions to problems the
-earlier phases create. The end, not the start.
+## ✅ Foundation — DONE
+```
+01 data-structures     JS · objects · arrays · map/filter/reduce
+02 dom-and-events      the DOM, events, manual UI
+03 modern-js-for-react destructuring, spread, modules
+04 react               components · props · state · effects · lifting · fetch
+05 async-and-apis      promises · async/await · fetch
+06 backend             Node · Express · routes/controllers · PostgreSQL · SQL · pg driver
+07 full-stack (Part 1) React ⇄ Express ⇄ Postgres · CORS   ← finishing now
+```
 
 ---
 
-## The rhythm, one line
+## 🎯 TWO TRACKS GOING FORWARD
 
-> **Design it → hit a wall → learn the one new tool → build it ugly → make it work
-> → refine → commit → next.**
+Backend and frontend advance **in parallel** — backend is the serious deep dive; React
+levels up alongside it (a project per level), less intense but aiming at true expertise.
 
-## 🧭 DSA — parallel track
-One problem a day (LeetCode easy → medium), separate from all of this. Different
-muscle. They converge on their own, later.
+### ⚙️ BACKEND TRACK (primary — the deep one)
+
+```
+── MID BACKEND ─────────────────────────────────
+  • Auth & Security ⭐  — signup/login, password hashing (bcrypt),
+      JWT/sessions, protected routes, roles/authorization
+  • Data relationships — foreign keys, JOINs, one-to-many / many-to-many, normalization
+  • ORM — Prisma (see it generate the SQL I already know)
+  • Validation (Zod) + centralized error-handling middleware
+  • Testing — Vitest + supertest (test the endpoints)
+  • TypeScript — types for maintainable backends
+
+── SENIOR BACKEND ──────────────────────────────
+  • Architecture — layered/clean structure, services, separation
+  • Performance — indexing, query optimization, the N+1 problem
+  • Caching — Redis
+  • Background jobs / queues · transactions
+  • Observability — logging, monitoring, error tracking
+  • Migrations · env/secrets · Docker · CI/CD · cloud deployment
+  • Security hardening (OWASP), rate limiting, API versioning
+
+── SYSTEM DESIGNER / ARCHITECT (the summit) ────
+  • System design — load balancing, replication/sharding,
+      monolith vs microservices, message queues, event-driven,
+      API gateways, CAP theorem, caching layers, designing for scale
+  • Trade-off thinking · leading technical decisions
+  • (the "system design interview" tier)
+```
+
+### ⚛️ FRONTEND TRACK (React → expert, Next.js concept-only)
+
+```
+  • React DEEP (worth mastering — also powers React Native / mobile):
+      hooks in depth · component patterns · composition · context
+      performance (memo, useMemo/useCallback, keys) · forms · custom hooks
+  • React Router — multi-page SPAs (URL swap, no reload)
+  • React Query (TanStack) — smart data fetching (caching/loading)
+  • Tailwind CSS + shadcn/ui — styling & polished components (fast, AI-friendly)
+  • Next.js — CONCEPT ONLY: what SSR/SSG/hydration/server-components ARE
+      and why they exist. Understand the philosophy; let AI write it.
+  → End state: EXPERT React (deep), Next.js literate.
+```
+
+**The pace:** as backend goes advanced, React goes advanced too — but backend leads.
+Each React level gets one built project; AI handles boilerplate, I own the understanding.
+
+---
+
+## Immediate next steps
+```
+1. Finish the full-stack notes app   (hand-write frontend — cement the full loop)
+2. Tailwind + shadcn                  (weekend — React looks pro; frontend base complete)
+3. Phase 8: AUTH & SECURITY           (the mid-backend leap — biggest step after CRUD)
+4. then: relationships/JOINs → Prisma → validation → testing → TypeScript
+5. later: caching, queues, Docker deploy → SYSTEM DESIGN
+```
+
+## The one honest truth
+The ladder gives the **skills**. "Expert" and "architect" come from **skills + years of
+building real systems + hitting real production problems**. Fuel = real projects, not
+tutorials. Marathon, not sprint — but every rung is reachable, and the summit is real.

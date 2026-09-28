@@ -1,0 +1,17 @@
+# Dependencies — never commit (huge, reinstallable with `npm install`)
+node_modules/
+
+# Secrets — NEVER commit (DB passwords, JWT secrets, etc.)
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Logs & OS/editor cruft
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
