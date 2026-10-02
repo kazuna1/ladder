@@ -12,16 +12,17 @@ const password = "hunter2";
 //   console.log("hash:", hash);
 
 const hashedPassword = await bcrypt.hash(password, 10);
-console.log("hashed password: ", hashedPassword);
-
+console.log("hash: ", hashedPassword);
 // TODO 2: hash the SAME password a SECOND time and print that too.
 //   Look closely: is it identical to the first hash, or different? WHY?
 //   (Think about the salt. Write your guess as a comment before you run it.)
+
 const hashedPassword2 = await bcrypt.hash(password, 10);
-console.log("hashed password: ", hashedPassword2);
+console.log("secondhashed: ", hashedPassword2);
 
 // TODO 3: print the LENGTH of a hash (hash.length).
 //   bcrypt hashes are always the same length. What is it?
+
 console.log(hashedPassword.length);
 
 // WHAT TO NOTICE (fill in after running):

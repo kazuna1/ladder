@@ -1,0 +1,25 @@
+{
+  "name": "ladder",
+  "version": "1.0.0",
+  "description": "A zero-to-hero coding journey, built **by hand** — one new concept or tool per step. Each folder is a stage; do them in order.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tugu1106/ladder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tugu1106/ladder/issues"
+  },
+  "homepage": "https://github.com/Tugu1106/ladder#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "type": "module"
+}

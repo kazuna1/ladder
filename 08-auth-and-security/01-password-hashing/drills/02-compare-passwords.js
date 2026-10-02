@@ -14,27 +14,23 @@ console.log("stored hash:", storedHash);
 //   HINT: const ok = await bcrypt.compare("hunter2", storedHash);
 //   Expected: true
 
-const result = await bcrypt.compare(realPassword, storedHash);
-console.log(result);
-
+const ok = await bcrypt.compare(realPassword, storedHash);
+console.log(ok);
 // TODO 2: compare a WRONG password ("wrongpass") against the stored hash. Print it.
 //   Expected: false
 
-const wrongpassword = "wrong";
-
-const result2 = await bcrypt.compare(wrongpassword, storedHash);
-console.log(result2);
+const wrongPassowrd = "sdadads";
+const notok = await bcrypt.compare(storedHash, wrongPassowrd);
+console.log(notok);
 
 // TODO 3: notice you never "unhashed" anything. Write, in a comment, HOW compare can
 //   return true without ever turning the hash back into "hunter2".
 //   (Hint: it re-hashes your guess using the salt baked into storedHash, then checks
 //    if the fingerprints match. One-way door — never reversed.)
 
-//all works handled by bcrypt js i think
+//compare verifies , unhashing is just checking not validating
 
 // WHAT TO NOTICE:
 // - This two-line check (hash on register, compare on login) is the ENTIRE password half
 //   of authentication. Everything else is plumbing around it.
 // - You compare fingerprints, never the passwords themselves.
-
-

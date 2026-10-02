@@ -14,17 +14,39 @@ const SECRET = "dev_secret_do_not_use_in_real_life";
 //     catch (err) { console.log("wrong secret →", err.name); }
 //   Expected err.name: "JsonWebTokenError" (invalid signature).
 
+const token = jwt.sign({ userId: 7 }, SECRET);
+try {
+  jwt.verify(token, "some_other_secret");
+} catch (err) {
+  console.log("wrong secret ->", err.name);
+}
 
 // TODO 2: TAMPERED TOKEN. Take a valid token, change one character in the middle
 //   (payload) part, then verify with the correct SECRET.
 //   HINT: build a broken string, e.g. token.slice(0, -3) + "abc", and verify it.
 //   Expected: it THROWS — the signature no longer matches the edited payload.
 
+const faketoken = token.slice(0, -3) + "abc";
+
+try {
+  jwt.verify(faketoken, SECRET);
+} catch (err) {
+  console.log("wrong", err.name);
+}
 
 // TODO 3: EXPIRED TOKEN. Sign with { expiresIn: "1s" }, wait ~1.5s, then verify.
 //   HINT to wait: await new Promise(r => setTimeout(r, 1500));
 //   Expected err.name: "TokenExpiredError".
 
+const todo3token = jwt.sign({ userId: 7 }, SECRET, { expiresIn: "1s" });
+
+await new Promise((r) => setTimeout(r, 1500)); // ← WAIT 1.5s so it expires
+
+try {
+  jwt.verify(todo3token, SECRET);
+} catch (err) {
+  console.log(err.name);
+}
 
 // WHAT TO NOTICE:
 // - Every attack on the token (guess the secret, edit the payload, reuse an old one)

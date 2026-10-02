@@ -17,15 +17,25 @@ console.log(token);
 //   It has 3 dot-separated parts. The MIDDLE part is your payload, only Base64-encoded.
 //   Confirm you can see userId: 7. Write in a comment: "payload is readable → I must
 //   NOT put secrets (like a password) in it."
-
+/* here is payload: {
+  "userId": 7,
+  "iat": 1790741227,
+  "exp": 1790744827
+}*/
 // TODO 3: sign a SECOND token that also puts an email in the payload, e.g.
 //   { userId: 7, email: "me@example.com" }. Print it. (Just to see custom claims work.)
 
 const token2 = jwt.sign({ userId: 7, email: "me@example.com" }, SECRET, {
-  expiresIn: "1h",
+  expiresIn: "24h",
 });
 console.log(token2);
 
+/*{
+  "userId": 7,
+  "email": "me@example.com",
+  "iat": 1790741388,
+  "exp": 1790827788
+}*/
 // WHAT TO NOTICE:
 // - sign() = "stamp this data with my secret so nobody can alter it." The data stays
 //   visible; the SIGNATURE (3rd part) is what protects it.

@@ -1,10 +1,27 @@
-# Module 03 — Register & Login (build the real endpoints)
+# Module 03 — Register & Login
 
-Now you leave the drills and build the real thing in **[../project-auth-api/](../project-auth-api/)**.
-Set that project up first (its README has the setup + `users` table).
+This module = **Authentication**: the register + login logic. You write it **by hand**
+(my rule) — the READMEs and drills give *steps and hints*, not the code.
 
-This module = **Authentication**: two endpoints. You write the logic **by hand** (my
-rule). Below are the *steps and hints* — not the code. Say "review" when done.
+Two stages, same as always: **learn the logic in isolation (drills), then build it for real.**
+
+## Stage A — Drills (logic in isolation, NO Express, NO database)
+
+Build register/login as plain functions against a fake in-memory `users` array. This
+isolates the *flow* from the plumbing. Setup: `npm init -y && npm install bcryptjs jsonwebtoken && npm pkg set type=module`
+
+- **[drills/01-register-function.js](./drills/01-register-function.js)** — `register()`: validate → dup-check → hash → store → return safe user
+- **[drills/02-login-function.js](./drills/02-login-function.js)** — `login()`: find → compare → sign token
+- **[drills/03-full-auth-flow.js](./drills/03-full-auth-flow.js)** — register → login → verify, the whole engine in one file
+
+Do these first. Say **"review"** after each. Once drill 03 works blank, the real version
+below is just wrapping this logic in Express + Postgres.
+
+## Stage B — Build the real endpoints in the project
+
+Now build the real thing in **[../project-auth-api/](../project-auth-api/)**.
+Set that project up first (its README has the setup + `users` table). Below are the
+*steps and hints* — not the code. Say "review" when done.
 
 ## Endpoint 1 — `POST /register`
 

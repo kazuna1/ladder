@@ -12,7 +12,6 @@ const token = jwt.sign({ userId: 7 }, SECRET, { expiresIn: "1h" });
 // TODO 1: verify the token with the SAME secret. Print the returned payload.
 //   HINT: const payload = jwt.verify(token, SECRET);
 //   console.log(payload);   // → { userId: 7, iat: ..., exp: ... }
-
 const payload = jwt.verify(token, SECRET);
 console.log(payload);
 
@@ -20,7 +19,8 @@ console.log(payload);
 //   This is exactly what your auth middleware will do: verify → grab userId →
 //   attach it to req.user so the controller knows who's asking.
 
-console.log(payload.userId);
+const userid = jwt.verify(token, SECRET);
+console.log(userid.userId);
 
 // TODO 3 (compare to jwt.decode): also print jwt.decode(token). It shows the same
 //   payload BUT does NOT check the signature. Write in a comment why you must use
@@ -29,7 +29,7 @@ console.log(payload.userId);
 
 console.log(jwt.decode(token));
 
-// i think our purpose is check without exposing so why we need decode etc idk something like that?
+//so its just decodes not verify i guess
 
 // WHAT TO NOTICE:
 // - verify does two jobs at once: checks the signature (not tampered, right secret) AND

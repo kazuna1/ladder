@@ -13,19 +13,17 @@ const password = "hunter2";
 //     await bcrypt.hash(password, 8);
 //     console.log("cost 8:", Date.now() - start, "ms");
 //   Repeat for 10 and 12.
-
 let start = Date.now();
 await bcrypt.hash(password, 8);
-console.log("cost of 8: ", Date.now() - start, "ms");
+console.log("cost 8: ", Date.now() - start, "ms");
 
 start = Date.now();
 await bcrypt.hash(password, 10);
-console.log("cost of 10: ", Date.now() - start, "ms");
+console.log("cost 10: ", Date.now() - start, "ms");
 
 start = Date.now();
 await bcrypt.hash(password, 12);
-console.log("cost of 12: ", Date.now() - start, "ms");
-
+console.log("cost 12: ", Date.now() - start, "ms");
 // TODO 2: before running, PREDICT (as a comment): each +2 to the cost roughly ____x
 //   the time, because cost N means 2^N internal iterations. Then run and check.
 
